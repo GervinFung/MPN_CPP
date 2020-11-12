@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <filesystem>
 #include <string>
 #include <iomanip>
 #include "outFile.hpp"
@@ -18,11 +19,10 @@ void writeFile(MPN* dataMPN, const int size, ofstream &outFile) {
             const int mpn = dataMPN[i].getMPN();
             const int lower = dataMPN[i].getLowerConfidenceLimit();
             const int upper = dataMPN[i].getUpperConfidenceLimit();
-            if (i == size - 1)
-                outFile << combinePositive << " " << mpn << " " << lower << " " << upper << " ";
-            else
-                outFile << combinePositive << " " << mpn << " " << lower << " " << upper << " " << endl;
-
+            outFile << combinePositive << " " << mpn << " " << lower << " " << upper << " ";
+            if (i != size - 1){
+                outFile << endl;
+            }
         }
         outFile.close();
     } else cerr << "Failed to open file" << endl;

@@ -31,10 +31,12 @@ int main() {
     writeFile(dataMPN, size, outFile);
     do {
         displayOption(mpnOption);
-        if (mpnOption == 1)
+        if (mpnOption == 1) {
             output(dataMPN, size, 0);
-        else if (mpnOption == 2)
+        }
+        else if (mpnOption == 2) {
             containCombinationPositive(dataMPN, size);
+        }
         else if (mpnOption == 3) {
             insertNewData(dataMPN, size);
             writeFile(dataMPN, size, outFile);
@@ -43,16 +45,18 @@ int main() {
             updateList(dataMPN, size);
             writeFile(dataMPN, size, outFile);
         }
-        else if (mpnOption == 5)
+        else if (mpnOption == 5) {
             displayQuery(dataMPN, size);
+        }
         else if (mpnOption == 6) {
             deleteData(dataMPN, size);
             writeFile(dataMPN, size, outFile);
         }
-        else if (mpnOption == 7)
+        else if (mpnOption == 7) {
             writeFile(dataMPN, size, outFile);
+        }
         if (mpnOption < 7) {
-            cout << "Press any key to continue..." << endl;
+            cout << "Press any key to continue (except space key & enter key)..." << endl;
             cin.ignore(numeric_limits<streamsize>::max(),'\n');
             cout << "\033[2J\033[1;1H";
         }
@@ -65,10 +69,10 @@ int main() {
 
 
 void welcomeMessage() {
-    cout <<  setfill(' ') << setw(50) << "\t       __       __        __\n";
-    cout << setw(80) << "\t      /  \\    /  \\ ____ |  | ____  ____    _____   ____ \n";
-    cout << setw(80) << "\t      \\   \\/\\/   // __ \\|  |/ ___\\/  _ \\  /     \\ / __ \\\n";
-    cout << setw(80) << "\t       \\        /|  ___/|  |  \\__(  <_> )|  | |  \|  ___/\n";
+    cout <<  setfill(' ') << setw(50) << "\t       __      __        __\n";
+    cout << setw(80) << "\t      /  \\    /  \\ ____ |  | ____  ____    _____   _____ \n";
+    cout << setw(80) << "\t      \\   \\/\\/   // __ \\|  |/ ___\\/  _ \\  /     \\ /  __ \\\n";
+    cout << setw(80) << "\t       \\        /|  ___/|  |  \\__(  <_> )|  | |  ||  ___/\n";
     cout << setw(80) << "\t        \\__/\\__/  \\____\\|__|\\_____>____/ |__|_|__|\\____\\\n" << endl;
 }
 

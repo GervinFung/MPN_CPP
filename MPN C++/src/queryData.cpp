@@ -16,8 +16,12 @@ void displayQuery(MPN* dataMPN, const int size) {
         const int amountObtained = tubesQuantity(volume);
         MPN* queryMPN = new MPN[size];
         int k = 0;
-        if (option == 1) option = 0;
-        else if (option == 3) option = 4;
+        if (option == 1) {
+            option = 0;
+        }
+        else if (option == 3) {
+            option = 4;
+        }
         cout << "Option: " << option << " " << amountObtained << endl;
         for (int i = 0; i < size; i++) {
             int amountBottle = dataMPN[i].getCombinationPositive().at(0) - '0';
@@ -42,8 +46,9 @@ int tubesQuantity(const double volume) {
         cout << "How many tubes do you want to query for " << volume << "ml tube(s): ";
         getline(cin, choice);
         isValid = isInt(choice, 1, 5);
-        if (isValid)
+        if (isValid) {
             amount = choice.at(0) - '0';
+        }
     } while (!isValid);
     return amount;
 }
@@ -64,9 +69,13 @@ double queryChoice(int* option) {
         if (isValid) {
             *option = choice.at(0) - '0';
             if (*option >= 1 && *option <= 4) {
-                if (*option == 1) volume = 10;
-                else if (*option == 2) volume = 1;
-                else if (*option == 3) volume = 0.1;
+                if (*option == 1) {
+                    volume = 10;
+                } else if (*option == 2) {
+                    volume = 1;
+                } else if (*option == 3) {
+                    volume = 0.1;
+                }
             }
         }
     } while (!isValid);

@@ -9,8 +9,13 @@ using namespace std;
 void merge(MPN *dataMPN, const int left, const int mid, const int right) {
     MPN *leftMPN = new MPN[mid - left + 2];
     MPN *rightMPN = new MPN[right - mid + 1];
-    for (int i = left; i <= mid; i++) leftMPN[i - left] = dataMPN[i];
-    for (int i = mid + 1; i <= right; i++) rightMPN[i - mid - 1] = dataMPN[i];
+
+    for (int i = left; i <= mid; i++) {
+        leftMPN[i - left] = dataMPN[i];
+    }
+    for (int i = mid + 1; i <= right; i++) {
+        rightMPN[i - mid - 1] = dataMPN[i];
+    }
 
     //For compariing to neighbor element
     //since 5-5-5 is the max value, 6-6-6 will be the benchmark for comparison

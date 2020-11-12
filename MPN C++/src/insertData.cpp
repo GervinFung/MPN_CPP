@@ -47,8 +47,9 @@ void insertNewData(MPN* dataMPN, int &size) {
         cout << "*WARNING*\nOnly 125 of MPN data is allowed\nYou've exceed the maximum MPN data capacity. Do you wish to delete some MPN data? (yes to proceed/ any key to exit)" << endl;
         string deleteOption;
         getline(cin, deleteOption);
-        if (deleteOption.compare("yes") == 0 || deleteOption.compare("Yes") == 0)
+        if (deleteOption.compare("yes") == 0 || deleteOption.compare("Yes") == 0) {
             deleteData(dataMPN, size);
+        }
         else return ;
     }
 }

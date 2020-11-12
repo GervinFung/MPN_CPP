@@ -40,10 +40,13 @@ bool isCombinationPositive(const string line) {
             const int secondDigit = line.at(2) - '0';
             const int thirdDigit = line.at(4) - '0';
             const bool isAtMostFive = firstDigit <= 5 && secondDigit <= 5 && thirdDigit <= 5;
-            if (!isAtMostFive)
+            if (!isAtMostFive) {
                 cout << "Please enter proper format of combination-of-positives triplet. 5-5-5 for example" << endl;
+            }
             return isAtMostFive;
-        } else cout << "Please enter proper format of combination-of-positives triplet. 5-5-5 for example" << endl;
+        } else {
+            cout << "Please enter proper format of combination-of-positives triplet. 5-5-5 for example" << endl;
+        }
         return false;;
     }
     return false;
