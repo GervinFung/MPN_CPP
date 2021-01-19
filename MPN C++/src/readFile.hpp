@@ -9,23 +9,17 @@ using namespace std;
 
 struct MPN {
     private : string combinationPositive;
+                int mpnIndex, confidenceLower, confidenceUpper;
     public :
-        void setCombinationPositive(const string combinationPositive) {
+        MPN() {}
+        MPN(const string combinationPositive, const int mpnIndex, const int confidenceLower, const int confidenceUpper) {
             this->combinationPositive = combinationPositive;
+            this->mpnIndex = mpnIndex;
+            this->confidenceLower = confidenceLower;
+            this->confidenceUpper = confidenceUpper;
         }
         string getCombinationPositive () const{
             return this->combinationPositive;
-        }
-    private : int mpnIndex, confidenceLower, confidenceUpper;
-    public :
-        void setMPN(int mpnIndex) {
-            this->mpnIndex = mpnIndex;
-        }
-        void setLowerConfidenceLimit(const int confidenceLower) {
-            this->confidenceLower = confidenceLower;
-        }
-        void setUpperConfidenceLimit(const int confidenceUpper) {
-            this->confidenceUpper = confidenceUpper;
         }
         int getMPN() const{
             return this->mpnIndex;

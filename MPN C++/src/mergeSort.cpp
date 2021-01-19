@@ -19,8 +19,8 @@ void merge(MPN *dataMPN, const int left, const int mid, const int right) {
 
     //For compariing to neighbor element
     //since 5-5-5 is the max value, 6-6-6 will be the benchmark for comparison
-    leftMPN[mid - left + 1].setCombinationPositive("6-6-6");
-    rightMPN[right - mid].setCombinationPositive("6-6-6");
+    leftMPN[mid - left + 1] = MPN("6-6-6", 0, 0, 0);
+    rightMPN[right - mid] = MPN("6-6-6", 0, 0, 0);
 
     int i = 0, j = 0;
     for (int k = left; k <= right; k++) {

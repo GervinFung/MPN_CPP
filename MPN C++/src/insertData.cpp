@@ -21,10 +21,7 @@ void insertNewData(MPN* dataMPN, int &size) {
             if (compare == -1) {
                 //if the new data is smaller than the next data
                 shiftDataToRight(dataMPN, size + 1, i);
-                dataMPN[i].setCombinationPositive(combinationPositive);
-                dataMPN[i].setMPN(mpn);
-                dataMPN[i].setLowerConfidenceLimit(low);
-                dataMPN[i].setUpperConfidenceLimit(up);
+                dataMPN[i] = MPN(combinationPositive, mpn, low, up);
                 size++;
                 cout << "Inserting data...\nData successfully inserted" << endl;
                 return;
@@ -35,10 +32,7 @@ void insertNewData(MPN* dataMPN, int &size) {
                 return;
             } else if (compare == 1 && i == size - 1) {
                 //if the new data is the largest of all
-                dataMPN[i].setCombinationPositive(combinationPositive);
-                dataMPN[i].setMPN(mpn);
-                dataMPN[i].setLowerConfidenceLimit(low);
-                dataMPN[i].setUpperConfidenceLimit(up);
+                dataMPN[i] = MPN(combinationPositive, mpn, low, up);
                 cout << "Inserting data...\nData successfully inserted" << endl;
                 return;
             }

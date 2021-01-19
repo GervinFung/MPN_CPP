@@ -31,17 +31,17 @@ void updateData(MPN &dataMPN, const int option) {
     int previousData;
     if (option == 1) {
         previousData = dataMPN.getMPN();
-        dataMPN.setMPN(getIndexMPN());
+        dataMPN = MPN(dataMPN.getCombinationPositive(), getIndexMPN(), dataMPN.getLowerConfidenceLimit(), dataMPN.getUpperConfidenceLimit());
         cout << "MPN index/100ml updated from " << previousData << " to " << dataMPN.getMPN() << endl;
     }
     else if (option == 2) {
         previousData = dataMPN.getLowerConfidenceLimit();
-        dataMPN.setLowerConfidenceLimit(getLowerBound());
+        dataMPN = MPN(dataMPN.getCombinationPositive(), dataMPN.getMPN(), getLowerBound(), dataMPN.getUpperConfidenceLimit());
         cout << "95% lower confidence limit updated from " << previousData << " to " << dataMPN.getLowerConfidenceLimit() << endl;
     }
     else if (option == 3) {
         previousData = dataMPN.getUpperConfidenceLimit();
-        dataMPN.setUpperConfidenceLimit(getUpperBound());
+        dataMPN = MPN(dataMPN.getCombinationPositive(), dataMPN.getMPN(), dataMPN.getLowerConfidenceLimit(), getUpperBound());
         cout << "95% upper confidence limit updated from " << previousData << " to " << dataMPN.getUpperConfidenceLimit() << endl;
     }
 }

@@ -35,10 +35,7 @@ int readFile(MPN *dataMPN, ifstream &infile) {
                     line.erase(0, found + 1);
                     j++;
                 }
-                dataMPN[i].setCombinationPositive(data[0]);
-                dataMPN[i].setMPN(stoi(data[1]));
-                dataMPN[i].setLowerConfidenceLimit(stoi(data[2]));
-                dataMPN[i].setUpperConfidenceLimit(stoi(data[3]));
+                dataMPN[i] = MPN(data[0], stoi(data[1]), stoi(data[2]), stoi(data[3]));
                 i++;
             }
             infile.close();
